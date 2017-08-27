@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="js/fancybox/dist/jquery.fancybox.css">
-  <link rel="stylesheet" href="js/OwlCarousel2/dist/assets/owl.carousel.css">
-  <!-- <link rel="stylesheet" href="css/main.min.css"> -->
+	<link rel="stylesheet" href="js/slick/slick.css">
+	<link rel="stylesheet" href="js/slick/slick-theme.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <title>Burger</title>
@@ -122,12 +122,15 @@
       <!-- BURGER SECTION -->
       <section class="section burger">
         <div class="container burger-container">
+
             <a class="burger__left-link">
               <svg class="burger__left-arrow">
                 <use xlink:href="img/icons/sprite.svg#arrow-scroll"></use>
               </svg>
             </a>
-          <div class="burger__content owl-carousel">
+
+          <div class="burger__content slider fade">
+
             <div class="burger__desc">
               <div class="burger__composition">
                 <svg class="burger__composition-pic">
@@ -207,6 +210,7 @@
                 </div>
               </div>
             </div>
+
             <div class="burger__desc">
               <div class="burger__composition">
                 <svg class="burger__composition-pic">
@@ -286,6 +290,7 @@
                 </div>
               </div>
             </div>
+
             <div class="burger__desc">
               <div class="burger__composition">
                 <svg class="burger__composition-pic">
@@ -365,6 +370,7 @@
                 </div>
               </div>
             </div>
+
             <div class="burger__desc">
               <div class="burger__composition">
                 <svg class="burger__composition-pic">
@@ -444,6 +450,7 @@
                 </div>
               </div>
             </div>
+
             <div class="burger__desc">
               <div class="burger__composition">
                 <svg class="burger__composition-pic">
@@ -523,12 +530,15 @@
                 </div>
               </div>
             </div>
+
           </div>
+
             <a class="burger__right-link">
               <svg class="burger__right-arrow">
                 <use xlink:href="img/icons/sprite.svg#arrow-scroll"></use>
               </svg>
             </a>
+
         </div>
       </section>
 
@@ -850,7 +860,7 @@
                       </label>
                     </div>
                     <div class="order-form__row">
-                      <input class="order-form__button modalbox" name="" type="submit" value="Заказать" data-fancybox data-fancybox-type="ajax" href="#send">
+                      <input class="order-form__button" name="" type="submit" value="Заказать" data-fancybox data-options='{"src": "#send", "modal": true}'>
                       <input class="order-form__button order-form__button--reset" name="" type="reset" value="Очистить">
                     </div>
                   </div>
@@ -991,7 +1001,11 @@
 
     <div id="send">
   		<div class="send__msg">Сообщение отправлено</div>
-  		<button class="send__close" data-fancybox-close>Закрыть</button>
+  		<button class="send__close">Закрыть</button>
+		</div>
+		<div id="error">
+  		<div class="error__msg">Ошибка</div>
+  		<button class="error__close">Закрыть</button>
 		</div>
 
 
@@ -1001,7 +1015,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="js/fancybox/dist/jquery.fancybox.min.js"></script>
-  <script src="js/OwlCarousel2/dist/owl.carousel.min.js"></script>
+	<script src="js/slick/slick.min.js"></script>
+	<script src="js/slider.js"></script>
   <script src="js/jquery.maskedinput.js"></script>
   <script src="js/mask.js"></script>
   <script src="js/order.js"></script>

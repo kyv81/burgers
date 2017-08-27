@@ -312,33 +312,3 @@ function init() {
 // modal fancybox
 
     $('.modalbox').fancybox();
-
-
-// owl carousel 2
-var owl =     $('.owl-carousel').owlCarousel({
-                loop:true, //Зацикливаем слайдер
-                margin:50, //Отступ от элемента справа в 50px
-                nav:false, //Отключение навигации
-                autoplay:false, //Автозапуск слайдера
-                smartSpeed:1000, //Время движения слайда
-                autoplayTimeout:2000, //Время смены слайда
-                responsive:{ //Адаптивность. Кол-во выводимых элементов при определенной ширине.
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:1
-                    },
-                    1000:{
-                        items:1
-                    }
-                }
-            });
-
-
-$(".burger__right-link").click(function() {
-    owl.trigger('next.owl.carousel');
-})
-$(".burger__left-link").click(function() {
-    owl.trigger('prev.owl.carousel');
-})

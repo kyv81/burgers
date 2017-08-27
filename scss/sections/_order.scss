@@ -245,19 +245,19 @@
 
 /* modal fancybox */
 
-#send {
+#send, #error {
 	display: none;
 	text-align: center;
 	box-shadow: 0px 0px 40px 0px rgba(0, 0, 1, 0.5);
 	border-radius: rem(5px);
 }
 
-.send__msg {
+.send__msg, .error__msg {
 	font-family: 'Ubuntu-Light';
 	font-size: 14px;
 }
 
-.send__close {
+.send__close, .error__close {
 	margin-top: 20px;
 	font-family: 'Ubuntu-Medium';
 	font-size: 13px;

@@ -1,38 +1,28 @@
+$(function() {
+    $('#form').on('submit', function(e) {
+        e.preventDefault();
 
+        var form = $(this),
+            formData = form.serialize();
 
-var submitForm = function (ev) {
-    ev.preventDefault();
+        $.ajax({
+            url: '/server.php',
+            type: 'POST',
+            data: formData,
+            success: function(data) {
 
-    var form = $(ev.target);
+                var popup = data.status ? '#send' : '#error';
 
-    var request = ajaxForm(form);
+                $.fancybox.open({
+                    src: popup
+                })
 
-    request.done(function(msg) {
-        var mes = msg.mes,
-            status = msg.status;
-        if (status === 'OK') {
-            form.append('<p class="success">' + mes + '</p>');
-        } else{
-            form.append('<p class="error">' + mes + '</p>');
-        }
-    });
+              }
+          })
+      })
 
-    request.fail(function(jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
-    });
-}
-
-var ajaxForm = function (form) {
-
-    var url = form.attr('action'),
-        data = form.serialize();
-
-    return $.ajax({
-        type: 'POST',
-        url: url,
-        data: data,
-    });
-
-}
-
-$('#form').on('submit', submitForm);
+      $('.send__close, .error__close').on('click', function(e){
+        e.preventDefault();
+        $.fancybox.close();
+    })
+})
