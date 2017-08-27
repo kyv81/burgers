@@ -1,0 +1,273 @@
+.order {
+	background-image: url(../img/bg/order-bg.jpg);
+	@include cover;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+  .section-title {
+    display: flex;
+  	justify-content: center;
+  	margin-bottom: rem(65px);
+    padding-top: rem(60px);
+
+  	@include tablets {
+  		margin-bottom: rem(35px);
+  	}
+
+  	@include phones () {
+  		text-align: center;
+  		padding: rem(60px) rem(30px);
+  		font-size: rem(50px);
+  		line-height: rem(60px);
+  		margin-bottom: rem(30px);
+  	}
+  }
+
+	@include tablets {
+		justify-content: flex-start;
+	}
+}
+
+.order-form {
+	width: 100%;
+	display: flex;
+
+	@include tablets {
+		flex-direction: column;
+		align-items: center;
+		padding: 0 130px;
+	}
+
+	@include phones () {
+		padding: 0;
+	}
+}
+
+.order-form__col {
+	width: 93%;
+	flex: 1;
+	margin-left: rem(20px);
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	@include tablets {
+		margin-left: rem(0px);
+		margin-bottom: rem(17px);
+	}
+}
+
+.order-form__row {
+	display: flex;
+	margin-bottom: rem(17px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@include phones () {
+		justify-content: center;
+	}
+}
+
+.order-form__block {
+	flex: 1;
+	margin-left: rem(20px);
+	cursor: pointer;
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	@include tablets {
+		width: 100%;
+	}
+}
+
+.order-form__title {
+	display: block;
+  font-family: 'Ubuntu-Light';
+	font-size: rem(14px);
+	color: #fff;
+	margin-bottom: rem(3px);
+
+	@include tablets {
+		margin-bottom: rem(9px);
+	}
+}
+
+.order-form__input {
+	width: 100%;
+	font-size: rem(16px);
+	padding: rem(9px);
+	background: #fff;
+	border-radius: rem(5px);
+	border-color: #fff;
+  outline: none;
+
+  &:focus {
+    border: rem(2px) solid $gold;
+  }
+}
+
+.order-form__textarea {
+	margin-bottom: rem(13px);
+
+	@include tablets {
+		width: 100%;
+	}
+	@include phones () {
+		margin-bottom: rem(40px);
+	}
+}
+
+.order-form__comments {
+	width: 100%;
+	height: rem(110px);
+	border: rem(1px) solid transparent;
+	border-radius: rem(7px);
+	padding: rem(8px) rem(10px);
+	resize: none;
+  outline: none;
+
+  &:focus {
+    border: rem(2px) solid $gold;
+  }
+}
+
+.order-form__radio {
+	display: flex;
+	margin-left: rem(15px);
+	cursor: pointer;
+	white-space: nowrap;
+	align-items: center;
+	position: relative;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.order-form__radio-elem {
+	position: absolute;
+	top: 0;
+	left: rem(-9999px);
+}
+
+.order-form__radio-fake {
+	@include circle(16px);
+	background-color: #fff;
+	position: relative;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		@include circle(0px);
+		background-color: $red;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: width 0.1s, height 0.1s;
+	}
+}
+
+.order-form__radio-elem:checked {
+	&+.order-form__radio-fake {
+		&:after {
+			@include circle(7px);
+		}
+	}
+}
+
+.order-form__radio-title {
+  font-family: 'Ubuntu-Light';
+	font-size: rem(14px);
+	color: #fff;
+	margin-left: rem(10px);
+}
+
+.order-form__radio-checkbox {
+	.order-form__radio-fake {
+		border-radius: rem(0px);
+	}
+	.order-form__radio-elem {
+		&+.order-form__radio-fake {
+			&:after {
+				background: transparent;
+			}
+		}
+	}
+	.order-form__radio-elem:checked {
+		&+.order-form__radio-fake {
+			&:after {
+				background: url('../img/icons/check.png') 50% no-repeat transparent;
+				width: rem(11px);
+				height: rem(10px);
+			}
+		}
+	}
+}
+
+.order-form__button {
+	border: 0;
+	border-radius: rem(5px);
+	background-color: $red;
+	color: #fff;
+	font-family: 'Ubuntu-Medium';
+	font-size: rem(13px);
+	text-transform: uppercase;
+	padding: rem(10px) rem(15px);
+	margin-right: rem(20px);
+	cursor: pointer;
+  outline: none;
+
+	&:hover {
+		background-color: darken($red, 10%);
+	}
+}
+
+.order-form__button--reset {
+	padding-left: 0;
+	padding-right: 0;
+	text-transform: none;
+	background: transparent;
+
+	&:hover {
+		background: transparent;
+	}
+}
+
+
+/* modal fancybox */
+
+#send {
+	display: none;
+	text-align: center;
+	box-shadow: 0px 0px 40px 0px rgba(0, 0, 1, 0.5);
+	border-radius: rem(5px);
+}
+
+.send__msg {
+	font-family: 'Ubuntu-Light';
+	font-size: 14px;
+}
+
+.send__close {
+	margin-top: 20px;
+	font-family: 'Ubuntu-Medium';
+	font-size: 13px;
+	color: #fff;
+	cursor: pointer;
+	background-color: $red;
+	border-radius: rem(5px);
+	width: rem(97px);
+	height: rem(35px);
+	text-transform: uppercase;
+	border: 0;
+	outline: none;
+}

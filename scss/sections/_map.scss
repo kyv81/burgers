@@ -1,0 +1,110 @@
+.map__pic {
+	height: calc(100% - 58px);
+
+	@include phones {
+		height: calc(100% - 15%);
+	}
+}
+
+.footer {
+	background-image: url('../img/bg/footer-bg.png');
+	background-position: center;
+	width: 100%;
+	height: 15%;
+	padding-top: rem(7px);
+	padding-bottom: rem(9px);
+
+	@include phones {
+		padding-top: rem(23px);
+	}
+}
+
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+	width: rem(940px);
+	margin: 0 auto;
+
+	@include tablets {
+		width: rem(768px);
+	}
+
+	@include phones {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-width: rem(480px);
+	}
+}
+
+.footer__left {
+  font-family: 'Ubuntu-Light';
+	font-size: rem(14px);
+
+	@include phones {
+		text-align: center;
+	}
+}
+
+.footer__left-addr {
+	color: #fff;
+	margin-bottom: rem(6px);
+}
+
+.footer__left-phone {
+	display: inline-block;
+  vertical-align: middle;
+	font-family: 'Ubuntu-Bold';
+	color: $red;
+}
+
+.footer__left-icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: rem(12px);
+	height: rem(20px);
+  fill: $red;
+}
+
+.footer__left-text {
+	display: inline-block;
+  vertical-align: middle;
+	padding-left: rem(5px);
+}
+
+.footer__right {
+	display: flex;
+}
+
+.socials {
+	display: flex;
+	align-items: center;
+}
+
+.socials__item {
+	margin-left: rem(20px);
+
+  &:first-child {
+    margin-left: rem(0px);
+  }
+}
+
+.socials__link {
+  display: inline-block;
+  padding: rem(10px) rem(0px);
+	max-width: rem(23px);
+	max-height: rem(20px);
+	opacity: 0.3;
+	transition: 0.5s;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.socials__icon {
+	width: rem(23px);
+	height: rem(20px);
+  fill: #fff;
+}

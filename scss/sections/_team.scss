@@ -1,0 +1,151 @@
+.team {
+  background-image: url(../img/bg/team-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  position: relative;
+
+  .section-title {
+    margin-bottom: rem(63px);
+
+    @include tablets {
+      margin-bottom: rem(50px);
+    }
+  }
+}
+
+.team__content {
+  background-color: $black;
+  opacity: 0.93;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  padding: rem(99px) rem(105px) 0 rem(90px);
+
+  @include tablets {
+    width: 100%;
+    padding-top: rem(99px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.team__list {
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.team__item {
+  display: block;
+  margin-bottom: rem(16px);
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.team__item.active {
+		.team__link:before {
+			transform: rotate(180deg);
+		}
+		.team__link {
+			color: $gold;
+		}
+		.team__desc {
+      height: auto;
+			margin-bottom: rem(37px);
+
+			@include tablets() {
+				margin-bottom: rem(23px);
+			}
+		}
+	}
+
+.team__link {
+  display: inline-block;
+  font-family: 'Gagalin-Regular';
+  font-size: rem(14px);
+  line-height: rem(28px);
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: rem(10px);
+  padding-left: rem(20px);
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    border-top: rem(5px) solid $gold;
+    border-right: rem(5px) solid transparent;
+    border-bottom: rem(0px) solid transparent;
+    border-left: rem(5px) solid transparent;
+  }
+
+  @include tablets {
+    font-size: rem(25px);
+    margin-bottom: rem(15px);
+    margin-left: rem(128px);
+  }
+}
+
+.team__desc {
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  padding-left: rem(18px);
+
+  @include tablets {
+    width: rem(400px);
+    flex-direction: column;
+    align-items: center;
+    margin-right: rem(21px);
+    text-align: center;
+  }
+}
+
+.team__pic {
+  width: rem(100px);
+  height: rem(100px);
+  margin-right: rem(21px);
+
+  @include tablets {
+    margin-bottom: rem(21px);
+  }
+}
+
+.team__img {
+  @include cover;
+  width: rem(100px);
+  height: rem(100px);
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.team__work {
+  font-size: rem(14px);
+  color: #fff;
+}
+
+.team__title {
+  font-family: 'Ubuntu-Bold';
+  margin-bottom: rem(11px);
+}
+
+.team__text {
+  font-family: 'Ubuntu-Light';
+  line-height: rem(24px);
+}

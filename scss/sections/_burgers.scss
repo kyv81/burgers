@@ -1,0 +1,305 @@
+.burger {
+	background: #f9b43b; /* Old browsers */
+  background: -webkit-linear-gradient(#f9b43b 0%, #ee9539 40%, #eb8e38 60%, #f9b33b 100%);
+  background: -o-linear-gradient(#f9b43b 0%, #ee9539 40%, #eb8e38 60%, #f9b33b 100%);
+  background: linear-gradient(#f9b43b 0%, #ee9539 40%, #eb8e38 60%, #f9b33b 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.burger-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.burger__content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.burger__left-link, .burger__right-link {
+	display: block;
+}
+
+.burger__left-arrow, .burger__right-arrow {
+  width: rem(30px);
+	height: rem(30px);
+  fill: #fff;
+  cursor: pointer;
+}
+
+.burger__left-arrow {
+	transform: rotate(90deg);
+	position: absolute;
+	left: 5%;
+	top: 50%;
+
+	&:hover {
+		transform: scale(1.3) rotate(90deg);
+	}
+}
+
+.burger__right-arrow {
+	transform: rotate(270deg);
+	position: absolute;
+	top: 50%;
+	right: 5%;
+
+	&:hover {
+		transform: scale(1.3) rotate(270deg);
+	}
+}
+
+.burger__desc {
+	display: flex;
+	position: relative;
+	padding-bottom: rem(88px);
+
+	@include tablets {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 0;
+		padding-top: rem(30px);
+	}
+}
+
+.burger__composition {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: rem(90px);
+	height: rem(90px);
+	background-color: rgba($orange, 0.4);
+	border-radius: rem(5px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	cursor: pointer;
+
+	@include tablets {
+		top: rem(30px);
+	}
+
+	@include phones {
+		width: rem(60px);
+		height: rem(60px);
+	}
+
+	&:hover {
+		background-color: rgba($red, 1);
+
+		.burger__composition-menu {
+			width: rem(270px);
+			height: rem(330px);
+			padding: rem(25px);
+
+			@include phones {
+				width: rem(230px);
+				height: rem(330px);
+			}
+		}
+
+		.burger__composition-table {
+      opacity: 1;
+		}
+	}
+}
+
+.burger__composition-pic {
+	width: 100%;
+	height: 50%;
+	fill: #fff;
+}
+
+.burger__composition-text {
+	font-family: 'Gagalin-Regular';
+	font-size: rem(14px);
+	color: #fff;
+	text-align: center;
+}
+
+.burger__composition-menu {
+	position: absolute;
+	top: 0;
+	left: rem(90px);
+	width: 0;
+	height: 0;
+	background-color: #fff;
+	border-radius: rem(5px);
+	opacity: 0.9;
+
+	@include phones {
+		left: rem(60px);
+	}
+}
+
+.burger__composition-table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+	font-family: 'Ubuntu-Medium';
+  font-size: 14px;
+  opacity: 0;
+}
+
+.burger__composition-td:last-child {
+  text-align: right;
+  font-family: 'Ubuntu-Light';
+}
+
+.burger__kkal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: rem(65px);
+  height: rem(90px);
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gagalin-Regular';
+
+  @include tablets {
+    top: rem(30px);
+    right: 0;
+    left: auto;
+  }
+
+  @include phones {
+    width: rem(55px);
+    height: rem(75px);
+  }
+}
+
+.burger__kkal-pic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  fill: #fff;
+}
+
+.burger__kkal-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: rem(20px);
+  line-height: rem(16px);
+  color: #fff;
+  margin-left: -25%;
+  margin-top: -15%;
+
+  @include phones {
+   margin-left: -30%;
+  }
+}
+
+.burger__kkal-text{
+	font-size: rem(20px);
+	line-height: rem(16px);
+	color: #fff;
+	text-align: center;
+}
+
+.burger__desc-left, .burger__desc-right {
+	flex: 1;
+
+	@include tablets {
+		width: 85%;
+		text-align: center;
+	}
+}
+
+.burger__desc-left {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+
+	@include tablets {
+		margin-bottom: rem(20px);
+	}
+
+	@include phones {
+		margin-bottom: rem(5px);
+	}
+}
+
+.burger__desc-pic {
+	max-width: 100%;
+
+	@include tablets {
+		width: 75%;
+	}
+
+	@include phones {
+		width: 90%;
+    margin-bottom: 10px;
+	}
+}
+
+.burger__desc-right {
+  .section-title--white {
+    line-height: rem(65px);
+  	margin-bottom: rem(30px);
+
+    @include phones {
+  		font-size: rem(50px);
+      line-height: 1;
+  	}
+  }
+}
+
+.burger__desc-text {
+	font-family: 'Ubuntu-Light';
+	font-size: 14px;
+  color: #fff;
+	margin-bottom: rem(20px);
+	line-height: rem(24px);
+	padding-right: rem(10px);
+
+	@include tablets {
+		margin-bottom: rem(10px);
+	}
+}
+
+.burger__order {
+	display: flex;
+	align-items: flex-end;
+
+	@include tablets {
+		justify-content: center;
+	}
+}
+
+.burger__order-desc {
+	margin-right: rem(30px);
+}
+
+.burger__order-number, .burger__order-text {
+  display: inline-block;
+	font-family: 'Gagalin-Regular';
+  line-height: rem(28px);
+  color: $red;
+}
+
+.burger__order-number {
+	font-size: rem(72px);
+  margin-top: rem(35px);
+
+	@include phones {
+		font-size: rem(50px);
+	}
+}
+
+.burger__order-text {
+	font-size: rem(30px);
+
+	@include phones {
+		font-size: rem(24px);
+	}
+}

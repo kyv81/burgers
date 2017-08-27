@@ -1,0 +1,15 @@
+@mixin cover {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  border-radius: $width/2;
+}
+
+@function rem($px) {
+  @return $px / 16px+0rem;
+}
